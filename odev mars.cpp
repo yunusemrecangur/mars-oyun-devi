@@ -8,7 +8,6 @@ int main() {
 
     srand(time(NULL));
 
-    // Karakter durum degiskenleri
     int saglik = 100;
     int enerji = 100;
     int oksijen = 100;
@@ -34,7 +33,7 @@ int main() {
     printf("   MARS KOLONISI YASAM DESTEK SISTEMI\n");
     printf("=====================================\n");
 
-    // Zorluk secimi
+    
     do {
 
         printf("\nZorluk Seviyesi Seciniz:\n");
@@ -85,7 +84,7 @@ int main() {
     printf("\nKurtarma ekibi 15 gun sonra gelecek.\n");
     printf("Hayatta kalmak icin bol sans!\n");
 
-    // Ana oyun dongusu
+  
     do {
 
         printf("\n=====================================\n");
@@ -110,7 +109,6 @@ int main() {
 
         switch (komut) {
 
-            // KESIF
             case 'G': {
 
                 if (enerji < 15 || oksijen < 10) {
@@ -168,7 +166,7 @@ int main() {
                 break;
             }
 
-            // OKSIJEN URETIMI
+          
             case 'O': {
 
                 int miktar;
@@ -221,7 +219,7 @@ int main() {
                 break;
             }
 
-            // TAMIR
+          
             case 'T': {
 
                 if (yedekParca <= 0) {
@@ -273,7 +271,6 @@ int main() {
                 break;
             }
 
-            // DURUM RAPORU
             case 'D': {
 
                 printf("\n========== DURUM RAPORU ==========\n");
@@ -320,7 +317,7 @@ int main() {
                 break;
             }
 
-            // DINLENME
+           
             case 'U': {
 
                 if (oksijen < 5) {
@@ -348,7 +345,7 @@ int main() {
                 break;
             }
 
-            // KUM FIRTINASI
+            
             case 'K': {
 
                 if (enerji < 10) {
@@ -362,7 +359,7 @@ int main() {
                 int toplamOksijenKaybi = 0;
                 int hasarAlinanTur = 0;
 
-                int i;  // FOR dongusu sayac degiskeni
+                int i;  
 
                 printf("\nKUM FIRTINASI BASLADI!\n");
 
@@ -436,7 +433,7 @@ int main() {
                 break;
             }
 
-            // HAVA KILIDI SIFRESI
+            
             case 'H': {
 
                 if (kilitMuhurlu == 1) {
@@ -495,7 +492,7 @@ int main() {
                 break;
             }
 
-            // CIKIS
+            
             case 'Q':
 
                 printf("\nSimulasyondan cikiliyor...\n");
@@ -503,7 +500,7 @@ int main() {
 
                 break;
 
-            // GECERSIZ KOMUT
+           
             default:
 
                 printf("Gecersiz komut! Bu komut tur harcamaz.\n");
@@ -512,7 +509,7 @@ int main() {
                 break;
         }
 
-        // Kaynak sinirlandirma
+    
         if (saglik < 0)
             saglik = 0;
         if (saglik > 100)
@@ -533,7 +530,6 @@ int main() {
         if (modulHasari > 100)
             modulHasari = 100;
 
-        // Gecerli komutlarda tur ilerletme
         if (gecerliKomut == 1 && oyunDevam == 1) {
 
             tur++;
@@ -552,7 +548,7 @@ int main() {
             }
         }
 
-        // Gun sonu ve olum kontrolu
+        
         if (saglik <= 0 || oksijen <= 0) {
 
             saglik = 0;
@@ -562,7 +558,7 @@ int main() {
 
         }
 
-        // 15 gun kontrolu
+       
         if (gun > 15 && saglik > 0 && oksijen > 0) {
 
             oyunKazandi = 1;
@@ -574,7 +570,7 @@ int main() {
 
     } while (oyunDevam == 1);
 
-    // SONUC RAPORU
+  
     printf("\n=====================================\n");
     printf("          SIMULASYON SONUCU\n");
     printf("=====================================\n");
